@@ -27,10 +27,15 @@ class System():
         options_mapped[user_choice-1]()
 
     def findStudent(self, student_id):
-
         for student in self.student_list:
             if student[0] == student_id:
                 return student
+
+    def updateStudents(self):
+        with open("./data/database.txt", "w") as self.database:
+            for student in self.student_list:
+                self.database.write(",".join(student))
+                self.database.write("\n")
 
     def option1(self):
         student_id = input("Enter the student id\n")
