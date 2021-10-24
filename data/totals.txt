@@ -1,0 +1,3 @@
+S1,Sally,White,330,110
+S2,Peter,Brown,134,45
+S3,Bella,Smith,168,56
