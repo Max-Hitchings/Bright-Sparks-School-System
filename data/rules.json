@@ -1,0 +1,10 @@
+{
+  "menu_items": {
+    "1": "option 1: Update students name and surname",
+    "2": "option 2: Update students mark for a subject",
+    "3": "option 3: Get a report on all students",
+    "4": "option 4: Generate student stats",
+    "5": "option 5: Quit"
+  },
+  "again_inputs": ["y", "Y", "YES", "yes", "Yes"]
+}

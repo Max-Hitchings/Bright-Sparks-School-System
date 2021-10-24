@@ -1,24 +1,30 @@
-import sys
 import json
+import sys
 import time
 
 
 class System():
     def __init__(self):
-        with open("./data/menu_items.json") as menu_items:
-            self.menu_items = json.load(menu_items)
+        with open("./data/rules.json") as rules:
+            self.rules = json.load(rules)
 
         with open("./data/database.txt", "r") as db:
             self.database = db
             self.student_list = []
             for student in db.read().splitlines():
                 self.student_list.append(student.split(','))
+        self.first_time = True
 
     def menu(self):
-        time.sleep(2)
+        if not self.first_time:
+            time.sleep(1)
+            if input("again?") not in self.rules["again_inputs"]:
+                self.quit()
+        self.first_time = False
+
         print("Welcome to the menu\nYour options are:")
-        for key in self.menu_items:
-            print(self.menu_items[key])
+        for key in self.rules["menu_items"]:
+            print(self.rules["menu_items"][key])
 
         options_mapped = [self.option1, self.option2,
                           self.option3, self.option4, self.quit]
