@@ -39,8 +39,16 @@ class System():
 
     def option1(self):
         student_id = input("Enter the student id\n")
-        print(', '.join(self.findStudent(student_id)))
+        student = self.findStudent(student_id)
 
+        student[1] = input("What is the new first name?")
+        student[2] = input("What is the new second name?")
+
+        for i in range(len(self.student_list)):
+            if self.student_list[i][0] == student[0]:
+                self.student_list[i] = student
+
+        self.updateStudents()
         self.menu()
 
     def option2(self):
@@ -57,14 +65,7 @@ class System():
             if self.student_list[x][0] == student[0]:
                 self.student_list[x] = student
 
-        # self.database.truncate(0)
-        with open("./data/database.txt", "w") as self.database:
-            for student in self.student_list:
-                self.database.write(",".join(student))
-                self.database.write("\n")
-            # self.database = new_database
-
-        # return student
+        self.updateStudents()
         self.menu()
 
     def option3(self):
