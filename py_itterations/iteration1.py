@@ -38,7 +38,7 @@ class System():
 
     # Function that can be called if to restart the menu
     def restart(self):
-        print("Opperation successful :)\n")
+        print("Operation successful :)\n")
         time.sleep(1)
         if input("again?") not in self.rules["again_inputs"]:
             self.quit()
