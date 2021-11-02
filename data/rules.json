@@ -4,7 +4,8 @@
     "2": "option 2: Update students mark for a subject",
     "3": "option 3: Get a report on all students",
     "4": "option 4: Generate student stats",
-    "5": "option 5: Quit"
+    "5": "option 5: Show class leaderboard",
+    "6": "option 6: Quit\n"
   },
   "again_inputs": ["y", "Y", "YES", "yes", "Yes"]
 }
