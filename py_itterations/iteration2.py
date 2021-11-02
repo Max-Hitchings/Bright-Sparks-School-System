@@ -97,7 +97,15 @@ class School_system():
             for i in range(3, len(student)):
                 # Using .lower to remove case sensitivity
                 if student[i].lower() == subject.lower():
-                    student[i+1] = input("What is the new mark?\n")
+                    while True:
+                        try:
+                            # Turn it into an int temparerely to check if it is an int then change it back to a string
+                            student[i +
+                                    1] = str(int(input("What is the new mark?\n")))
+                            break
+                        except:
+                            print("You must enter a number")
+                            time.sleep(.5)
                     subjectFlag = False
             # If the subject entered is invalid get a new input
             if subjectFlag:
